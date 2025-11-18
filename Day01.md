@@ -1,0 +1,13 @@
+Python Data Analytics
+Day 01 : Introduction to Pyhton Data Analytics
+
+Python
+
+    - Python
+
+    Rich Ecosystem of Libraries :
+        a. NumPy (Numerical Python)
+        b. Pandas 
+        c. Matplotlib
+        d. Seaborn
+        e. Scipy 
