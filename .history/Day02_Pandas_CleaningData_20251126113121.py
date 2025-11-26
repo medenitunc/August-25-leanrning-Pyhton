@@ -1,0 +1,27 @@
+import pandas as pd
+
+data = {
+    'Name': ['John', 'Alice', 'Bob', 'Eve', 'Charlie','Mohammed', 'Sara', None,'David', 'Nina', 'Liam'], 
+    'Age': [28, 24, 22, 30, 25, 27, 23, 29,None, 26, 24],
+    'City': ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix','Medine',None, 'San Antonio', 'San Diego', 'Dallas', 'San Jose']
+}
+
+df = pd.DataFrame(data)
+print("Original DataFrame:\n", df)
+
+
+# to detect null values , isnull() or notnull()
+print("\n Detecting null values:\n", df.isnull())
+
+print("\n We are having null values in 'Name' column:\n", df['Name'].isnull())
+
+print("\nNo of null values in data:\n", df.isnull().sum().sum())
+
+df1 = df.dropna()  # Drop rows with any null values
+
+print("\n DataFrame after dropping rows with null values:\n", df1)
+
+df2 = df.fillna(0)  # Fill null values with 0
+
+print("\n DataFrame after filling null values with 0:\n", df2)
+
