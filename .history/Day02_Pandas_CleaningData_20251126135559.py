@@ -37,7 +37,7 @@ print("\n Checking for duplicate rows:\n", df3.duplicated())
 df3 = df3.drop_duplicates()  # Remove duplicate rows
 print("\n DataFrame after removing duplicate rows:\n", df3)
 
-# print(df3['DasId'].duplicated())  # Check for duplicate DasId values
+print(df3['DasId'].duplicated())  # Check for duplicate DasId values
 # print(df3[df3['DasId'].duplicates(keep='first')])  # Remove duplicate rows based on 'DasId' column
 
 df3 = df3.drop_duplicates(subset=['DasId'], keep='first')  # Remove duplicate rows based on 'DasId' column
@@ -46,11 +46,8 @@ print("\n DataFrame after removing duplicate DasId rows:\n", df3)
 df3['Age'] = df3['Age'].astype(int)  # Convert 'Age' column to integer type
 print("\n DataFrame after converting 'Age' to integer type:\n", df3)
 
-df3['City'] = df3['City'].str.upper()  # Convert 'City' column to uppercase
+df3[['City']] = df3['City'].str.upper()  # Convert 'City' column to uppercase
 print("\n DataFrame after converting 'City' to uppercase:\n", df3)
 
-df3[['Name', 'City']] = df3[['Name', 'City']].apply(lambda x: x.str.upper())  # Remove leading/trailing whitespace from 'Name' and 'City' columns
+df3[['Name', 'City']] = df3[['Name', 'City']].apply(lambda x: x.str.strip())  # Remove leading/trailing whitespace from 'Name' and 'City' columns
 print("\n DataFrame after stripping whitespace from 'Name' and 'City':\n", df3)
-
-df3['City'] = df3['City'].str.replace('MEDINE', 'MEDINA')  # Correcting a specific value in 'City' column
-print("\n DataFrame after correcting 'City' value:\n", df3)
